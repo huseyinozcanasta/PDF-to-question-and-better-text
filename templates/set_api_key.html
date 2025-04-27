@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Anahtarı Girişi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini API Anahtarınızı Giriniz. Tamamen ücretsizdir yapay zekanın çalışabilmesi için gereklidir. </h1>
+        <form method="POST" action="{{ url_for('set_api_key') }}">
+            <label for="api_key">API Anahtarı:</label>
+            <input type="text" id="api_key" name="api_key" required />
+            <button type="submit">Kaydet ve Devam Et</button>
+        </form>
+        <p>API anahtarınızı <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">buradan</a> alabilirsiniz.</p>
+    </div>
+</body>
+</html>
