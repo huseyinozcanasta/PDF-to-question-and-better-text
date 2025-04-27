@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TÖDS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Dosyanızı Yükleyiniz (pdf,doc,docx,ppt,pptx,txt)</h1>
+        <form id="upload-form">
+            <input type="file" id="file-input" name="file" required />
+            <div>
+                <label><input type="checkbox" id="prompt1" name="prompt1" checked />Dersten Bir Şey Anlamadıysanız Geliştirilmiş Sunumunu Okumayı Deneyin</label>
+            </div>
+            <div>
+                <label><input type="checkbox" id="prompt2" name="prompt2" checked /> Test Çözün (20 Soru)</label>
+            </div>
+            <button type="submit">Yükle ve İşlemeye Başla</button>
+        </form>
+        <div id="status"></div>
+        <div id="upload-progress-container" style="display:none;">
+            <label for="upload-progress">Yükleme Durumu:</label>
+            <progress id="upload-progress" value="0" max="100"></progress>
+            <span id="upload-progress-text">0%</span>
+        </div>
+        <div id="processing-progress-container" style="display:none;">
+            <label for="processing-progress">İşlem Durumu:</label>
+            <progress id="processing-progress" value="0" max="100"></progress>
+            <span id="processing-progress-text">0%</span>
+        </div>
+        <div id="download-link" style="margin-top: 20px;"></div>
+        <div id="loading-spinner" class="spinner" style="display:none;"></div>
+    </div>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
